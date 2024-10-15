@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0DBB6"
+    android:orientation="vertical"
+    tools:context=".loginActivity">
+
+    <!--主体-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical"
+        tools:ignore="ExtraText"
+        android:paddingTop="100dp">
+
+<!--登录界面图标-->
+       <ImageView
+           android:id="@+id/lg_icon"
+           android:layout_width="match_parent"
+           android:layout_height="200dp"
+           android:src="@drawable/login_icon"
+           >
+
+       </ImageView>
+
+<!--用户名-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="#D1FFFFFF"
+            app:cardCornerRadius="25dp"
+            app:cardMaxElevation="0dp">
+
+            <EditText
+                android:id="@+id/uer_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="用户名"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColorHint="#3B644D"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+<!--密码卡片-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#D1FFFFFF"
+            app:cardCornerRadius="25dp"
+            app:cardMaxElevation="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp">
+<!--密码-->
+                <EditText
+                    android:id="@+id/uer_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="50dp"
+                    android:background="@null"
+                    android:hint="密码"
+                    android:inputType="textPassword"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="#3B644D"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+<!--密码不可见or可见-->
+                <ImageView
+                    android:id="@+id/view_password"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="0dp"
+                    android:contentDescription="切换密码可见性"
+                    android:onClick="viewpassword"
+                    android:padding="12dp"
+                    android:src="@drawable/baseline_key_off_24" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!--登录按钮-->
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#538A8B"
+            android:text="登录"
+            android:textColor="#F3E9E89B"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <!--记住密码-->
+        <CheckBox
+            android:id="@+id/remember_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="记住密码"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            />
+
+        <!--注册链接-->
+        <TextView
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:text="没有账号?点击这里注册"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            />
+
+        <!--登录协议-->
+        <CheckBox
+            android:id="@+id/btnagree"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center_horizontal"
+            android:onClick="showAgreementDialog"
+            android:text="登录协议"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            />
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
