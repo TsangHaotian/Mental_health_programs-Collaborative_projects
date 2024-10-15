@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         });
         //默认首页选中
         selectedFragment(0);
-
     }
 
     //当点击第一个界面，则隐藏其他界面，并且把选择界面添加到content的位置，实现跳转
