@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--底部导航栏控制页-->
+    <!--自我评估按钮-->
+    <item
+        android:id="@+id/self_assessment"
+        android:icon="@drawable/self_assessment_icon"
+        android:title="自评" />
+    <!--健康资源按钮-->
+    <item
+        android:id="@+id/health_resources"
+        android:icon="@drawable/health_resources_icon"
+        android:title="资源" />
+    <!--心情日记按钮-->
+    <item
+        android:id="@+id/diary"
+        android:icon="@drawable/diary_icon"
+        android:title="日记" />
+    <!--在线咨询按钮-->
+    <item
+        android:id="@+id/online_consultation"
+        android:icon="@drawable/online_consultation_icon"
+        android:title="咨询" />
+    <!--养成系统按钮-->
+    <item
+        android:id="@+id/cultivation_system"
+        android:icon="@drawable/cultivation_system_icon"
+        android:title="养成" />
+
+
+</menu>
