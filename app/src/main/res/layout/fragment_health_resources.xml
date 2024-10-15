@@ -3,15 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".fragment.cultivation_systemFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <androidx.appcompat.widget.Toolbar
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D584C087"
-        app:titleTextColor="#000000"
-        app:title="健康资源"/>
+        android:gravity="center"
+        android:textSize="60dp"
+        android:text="健康资源" />
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>

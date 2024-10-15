@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,22 +7,68 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bt_bottomnavigation_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e0dbb6"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 用户头像 -->
+        <ImageView
+            android:id="@+id/profile_icon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/desktop_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+        <!-- 用户名 -->
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="用户名"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/profile_icon"
+            app:layout_constraintLeft_toRightOf="@id/profile_icon"
+            app:layout_constraintTop_toTopOf="@id/profile_icon"
+            app:layout_constraintVertical_bias="0.0" />
+        <!-- 更多功能小图标 -->
+        <ImageView
+            android:id="@+id/profile_settings_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/more_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/bt_bottomnavigation"
-        android:background="#e0dbb6" />
-    <!--创建一个菜单，名字叫做navigation，目标在menu文件夹内-->
+        android:layout_height="0dp"
+        android:background="#e0dbb6"
+        app:layout_constraintBottom_toTopOf="@id/bt_bottomnavigation"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_bottomnavigation_top" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bt_bottomnavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#D584C087"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/navigation">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

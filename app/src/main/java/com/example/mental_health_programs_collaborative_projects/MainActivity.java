@@ -1,8 +1,15 @@
 package com.example.mental_health_programs_collaborative_projects;
 
-import android.app.FragmentTransaction;
+
+import android.app.Activity;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -18,6 +25,9 @@ import com.example.mental_health_programs_collaborative_projects.fragment.online
 import com.example.mental_health_programs_collaborative_projects.fragment.self_assessmentFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+/**
+ * @noinspection ALL
+ */
 public class MainActivity extends AppCompatActivity {
 
 
@@ -27,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
     private online_consultationFragment monline_consultationFragment;
     private cultivation_systemFragment mclutivation_systemFragment;
 
-
-    private BottomNavigationView mbottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //初始化控件
-        mbottomNavigationView = findViewById(R.id.bt_bottomnavigation);
+        BottomNavigationView mbottomNavigationView = findViewById(R.id.bt_bottomnavigation);
         //设置点击事件
         mbottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -71,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         });
         //默认首页选中
         selectedFragment(0);
+
     }
 
     //当点击第一个界面，则隐藏其他界面，并且把选择界面添加到content的位置，实现跳转
@@ -138,4 +147,6 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.hide(mclutivation_systemFragment);
         }
     }
+
+
 }
