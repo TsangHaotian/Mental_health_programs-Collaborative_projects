@@ -44,13 +44,6 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-
-
-//      使状态栏变成透明颜色
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
-
         //初始化控件
         BottomNavigationView mbottomNavigationView = findViewById(R.id.bt_bottomnavigation);
         //设置点击事件
