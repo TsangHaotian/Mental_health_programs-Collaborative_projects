@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Mental_health_programs_(Collaborative_projects)"
+rootProject.name = "Mental_health_programs-Collaborative_projects"
 include ':app'

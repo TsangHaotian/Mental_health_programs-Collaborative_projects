@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.mental_health_programs_collaborative_projects"
-        minSdk 28
+        minSdk 24
         targetSdk 34
         versionCode 1
         versionName "1.0"
