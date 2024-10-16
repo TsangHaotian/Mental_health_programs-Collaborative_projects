@@ -1,22 +1,11 @@
 package com.example.mental_health_programs_collaborative_projects;
 
-
-import android.app.Activity;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.mental_health_programs_collaborative_projects.fragment.cultivation_systemFragment;
 import com.example.mental_health_programs_collaborative_projects.fragment.diaryFragment;
@@ -25,11 +14,7 @@ import com.example.mental_health_programs_collaborative_projects.fragment.online
 import com.example.mental_health_programs_collaborative_projects.fragment.self_assessmentFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-/**
- * @noinspection ALL
- */
 public class MainActivity extends AppCompatActivity {
-
 
     private self_assessmentFragment mself_assessmentFragment;
     private health_resourcesFragment mhealth_resourcesFragment;
@@ -37,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private online_consultationFragment monline_consultationFragment;
     private cultivation_systemFragment mclutivation_systemFragment;
 
-
+    //底部导航栏
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         //默认首页选中
         selectedFragment(0);
     }
-
     //当点击第一个界面，则隐藏其他界面，并且把选择界面添加到content的位置，实现跳转
     private void selectedFragment(int position) {
         androidx.fragment.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -121,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
     //实现当点击当前页面，隐藏其他页面
-
     private void hideFragment(androidx.fragment.app.FragmentTransaction fragmentTransaction) {
         if (mself_assessmentFragment != null) {
             fragmentTransaction.hide(mself_assessmentFragment);
@@ -141,6 +124,12 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.hide(mclutivation_systemFragment);
         }
     }
+    //********************************************************************************************************//
+
+    //侧边抽屉部分
+
+
+
 
 
 }
