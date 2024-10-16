@@ -1,8 +1,7 @@
 package com.example.mental_health_programs_collaborative_projects;
 
-
+import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,42 +20,54 @@ public class registerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        setfuntion();
 
         reg = findViewById(R.id.btn_register);
         musername = findViewById(R.id.uer_name);
         mpassword = findViewById(R.id.uer_password);
 
 
-
-                // 检查用户名和密码是否为空
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String username = musername.getText().toString();
                 String password = mpassword.getText().toString();
-                Intent A = null;
-                String success = "注册成功";
-                String empty = "用户名或密码不能为空，请重新输入";
+                Intent intent = null;
+                //设置如果密码错误，弹出的内容
+                String noname = "请填写您的用户名";
+                String nopassword = "请填写您的密码";
+                String elseelse = "注册成功";
 
-                // 检查用户名和密码是否为空
-                if (username.isEmpty() || password.isEmpty()) {
-                    // 如果有空的字段，显示提示信息
-                    toastuti.showmsg(getApplicationContext(), empty);
+                //假设真确
+                if (username.isEmpty()) {
+                    //用户名为空
+                    Toast.makeText(getApplicationContext(), noname, Toast.LENGTH_SHORT).show();
+                } else if (password.isEmpty()) {
+                    //密码为空
+                    Toast.makeText(getApplicationContext(), nopassword, Toast.LENGTH_SHORT).show();
                 } else {
-                    // 正确 跳转页面并且弹出注册成功 toast
-                    A = new Intent(registerActivity.this, loginActivity.class);
-                    startActivity(A);
-                    toastuti.showmsg(getApplicationContext(), success);
+                    //注册成功
+                    Toast.makeText(getApplicationContext(), elseelse, Toast.LENGTH_SHORT).show();
+                    intent = new Intent(registerActivity.this, loginActivity.class);
+                    startActivity(intent);
+
                 }
+            }
+
+
+        });
+
+    }
+
+    private void setfuntion() {
+        findViewById(R.id.toolbar).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();/**结束当前的页面，也就是相当于跳回到之前的页面**/
             }
         });
 
 
-
     }
 
-
 }
-
-
-

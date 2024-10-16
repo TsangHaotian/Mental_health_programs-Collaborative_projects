@@ -43,12 +43,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
+                android:inputType="text"
+                android:maxLength="15"
                 android:hint="用户名"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:textColorHint="#3B644D"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
 
         </androidx.cardview.widget.CardView>
 <!--密码卡片-->
