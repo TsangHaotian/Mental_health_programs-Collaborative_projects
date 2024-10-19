@@ -41,27 +41,30 @@ public class registerActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String username = musername.getText().toString();
                 String password = mpassword.getText().toString();
-                //设置如果密码错误，弹出的内容
-                String noname = "请填写您的用户名";
-                String nopassword = "请填写您的密码";
-                String elseelse = "注册成功";
-                // 假设正确
-                if (username.isEmpty()) {
-                    // 用户名为空
-                    Toast.makeText(getApplicationContext(), noname, Toast.LENGTH_SHORT).show();
-                } else if (password.isEmpty()) {
-                    // 密码为空
-                    Toast.makeText(getApplicationContext(), nopassword, Toast.LENGTH_SHORT).show();
-                } else {
+                    // 先定义一个变量来标记是否有错误
+                    boolean hasError = false;
+                    if (username.isEmpty()) {
+                        musername.setError("用户名不能为空");
+                        hasError = true;
+                    }
+
+                    if (password.isEmpty()) {
+                        mpassword.setError("密码不能为空");
+                        hasError = true;
+                    }
+                    if (hasError) {
+                        // 如果有错误，就不执行登录操作
+                        return;
+                    }
                     // 注册成功
-                    Toast.makeText(getApplicationContext(), elseelse, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "注册成功", Toast.LENGTH_SHORT).show();
                     // 保存用户名和密码到SharedPreferences
                     saveCredentials(username, password);
                     // 跳转到登录页面
                     Intent intent = new Intent(registerActivity.this, loginActivity.class);
                     startActivity(intent);
+                    finish();
                 }
-            }
         });
 
         // 密码可见性
