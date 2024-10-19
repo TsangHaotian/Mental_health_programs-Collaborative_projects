@@ -33,6 +33,7 @@ public class loginActivity extends AppCompatActivity {
     private static final String PASSWORD = "password";
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,19 @@ public class loginActivity extends AppCompatActivity {
         mpassword = findViewById(R.id.uer_password);
         togglePassword = findViewById(R.id.view_password);
         agreement = findViewById(R.id.btnagree);
+        CheckBox rememberMe = findViewById(R.id.remember_password);
+
+
+        // 读取SharedPreferences中的用户名和密码
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        String savedUsername = sharedPreferences.getString(USERNAME, "");
+        String savedPassword = sharedPreferences.getString(PASSWORD, "");
+
+        if (!savedUsername.isEmpty() && !savedPassword.isEmpty()) {
+            musername.setText(savedUsername);
+            mpassword.setText(savedPassword);
+            rememberMe.setChecked(true);
+        }
 
         // 注册按钮跳转
         btnregister.setOnClickListener(new View.OnClickListener() {
@@ -116,10 +130,22 @@ public class loginActivity extends AppCompatActivity {
             return;
         }
 
+
         // 从SharedPreferences读取保存的用户名和密码
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         String savedUsername = sharedPreferences.getString(USERNAME, "");
         String savedPassword = sharedPreferences.getString(PASSWORD, "");
+
+        CheckBox rememberMe = findViewById(R.id.remember_password);
+        if (rememberMe.isChecked()) {
+            editor.putString(USERNAME, username);
+            editor.putString(PASSWORD, password);
+        } else {
+            editor.remove(USERNAME);
+            editor.remove(PASSWORD);
+        }
+        editor.apply();
 
         if (username.equals(savedUsername) && password.equals(savedPassword)) {
             // 登录成功，跳转到主页面
