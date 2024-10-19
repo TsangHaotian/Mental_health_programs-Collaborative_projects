@@ -2,6 +2,7 @@ package com.example.mental_health_programs_collaborative_projects;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -27,6 +28,10 @@ public class loginActivity extends AppCompatActivity {
     private EditText mpassword;
     private ImageView togglePassword;
     private CheckBox agreement;
+    private static final String SHARED_PREFS = "sharedPrefs";
+    private static final String USERNAME = "username";
+    private static final String PASSWORD = "password";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,19 +116,19 @@ public class loginActivity extends AppCompatActivity {
             return;
         }
 
+        // 从SharedPreferences读取保存的用户名和密码
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        String savedUsername = sharedPreferences.getString(USERNAME, "");
+        String savedPassword = sharedPreferences.getString(PASSWORD, "");
 
-        submitCredentials(username, password);
-        // 如果用户名和密码都不为空，执行提交操作并跳转到主页面
-        submitCredentials(username, password);
-        Intent intent = new Intent(loginActivity.this, MainActivity.class); // 假设你要跳转到的页面是MainActivity
-        startActivity(intent);
-        /*overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left); // 添加过渡动画，如果有需要*/
+        if (username.equals(savedUsername) && password.equals(savedPassword)) {
+            // 登录成功，跳转到主页面
+            Intent intent = new Intent(loginActivity.this, MainActivity.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
+        }
     }
-
-    private void submitCredentials(String username, String password) {
-    // 这里添加提交用户名和密码的代码
-    // 例如：使用HTTP请求发送到服务器
-}
 
     private void showAgreementDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
