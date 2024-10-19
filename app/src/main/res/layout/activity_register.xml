@@ -24,7 +24,7 @@
         android:layout_marginRight="30dp"
         android:orientation="vertical"
         tools:ignore="ExtraText"
-        android:paddingTop="100dp">
+        android:paddingTop="50dp">
 
         <!--注册界面图标-->
         <ImageView
@@ -98,7 +98,10 @@
                     android:padding="12dp"
                     android:src="@drawable/baseline_key_off_24" />
 
+
+
             </RelativeLayout>
+
         </androidx.cardview.widget.CardView>
 
         <!--注册按钮-->
@@ -107,16 +110,18 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:backgroundTint="#538A8B"
+            android:backgroundTint="@color/green"
             android:text="注册"
             android:textColor="#F3E9E89B"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
 
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-
 </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
