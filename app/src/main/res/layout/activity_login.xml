@@ -16,20 +16,19 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:orientation="vertical"
-        tools:ignore="ExtraText"
-        android:paddingTop="100dp">
+        android:paddingTop="100dp"
+        tools:ignore="ExtraText">
 
-<!--登录界面图标-->
-       <ImageView
-           android:id="@+id/lg_icon"
-           android:layout_width="match_parent"
-           android:layout_height="200dp"
-           android:src="@drawable/login_icon"
-           >
+        <!--登录界面图标-->
+        <ImageView
+            android:id="@+id/lg_icon"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/login_icon">
 
-       </ImageView>
+        </ImageView>
 
-<!--用户名-->
+        <!--用户名-->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -43,18 +42,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
+                android:hint="用户名"
                 android:inputType="text"
                 android:maxLength="15"
-                android:hint="用户名"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:textColorHint="#3B644D"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
-<!--密码卡片-->
+        <!--密码卡片-->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -67,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="0dp">
-<!--密码-->
+                <!--密码-->
                 <EditText
                     android:id="@+id/uer_password"
                     android:layout_width="match_parent"
@@ -80,7 +78,7 @@
                     android:textColorHint="#3B644D"
                     android:textSize="14sp"
                     android:textStyle="bold" />
-<!--密码不可见or可见-->
+                <!--密码不可见or可见-->
                 <ImageView
                     android:id="@+id/view_password"
                     android:layout_width="50dp"
@@ -114,8 +112,7 @@
             android:text="记住密码"
             android:textColor="@color/black"
             android:textSize="12sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <!--注册链接-->
         <TextView
@@ -126,8 +123,7 @@
             android:layout_marginTop="50dp"
             android:text="没有账号?点击这里注册"
             android:textColor="#000000"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <!--登录协议-->
         <CheckBox
@@ -141,9 +137,7 @@
             android:textStyle="bold" />
 
 
-
     </androidx.appcompat.widget.LinearLayoutCompat>
-
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

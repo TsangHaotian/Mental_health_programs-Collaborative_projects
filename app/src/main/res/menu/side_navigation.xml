@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_side_one"
+            android:icon="@drawable/side_one_icon"
+            android:title="@string/side_menu_one" />
+        <item
+            android:id="@+id/nav_side_two"
+            android:icon="@drawable/side_two_icon"
+            android:title="@string/side_menu_two" />
+        <item
+            android:id="@+id/nav_side_three"
+            android:icon="@drawable/connect_us2_icon"
+            android:title="@string/side_menu_three" />
+        <item
+            android:id="@+id/nav_side_four"
+            android:icon="@drawable/side_four_icon"
+            android:title="@string/side_menu_four" />
+    </group>
+</menu>

@@ -32,8 +32,6 @@ public class loginActivity extends AppCompatActivity {
     private static final String USERNAME = "username";
     private static final String PASSWORD = "password";
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +46,6 @@ public class loginActivity extends AppCompatActivity {
         togglePassword = findViewById(R.id.view_password);
         agreement = findViewById(R.id.btnagree);
         CheckBox rememberMe = findViewById(R.id.remember_password);
-
 
         // 读取SharedPreferences中的用户名和密码
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
@@ -125,11 +122,17 @@ public class loginActivity extends AppCompatActivity {
             mpassword.setError("密码不能为空");
             hasError = true;
         }
+
+        // 检查是否勾选了协议
+        if (!agreement.isChecked()) {
+            showAgreementDialog();
+            hasError = true;
+        }
+
         if (hasError) {
             // 如果有错误，就不执行登录操作
             return;
         }
-
 
         // 从SharedPreferences读取保存的用户名和密码
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
@@ -182,14 +185,15 @@ public class loginActivity extends AppCompatActivity {
                 "感谢您选择我们的应用，希望您使用愉快！\n" +
                 "\n" +
                 "—— [登录吧] 啊对对队");
-//设置"同意"按钮
+        //设置"同意"按钮
         builder.setPositiveButton("同意", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                agreement.setChecked(true);
                 dialog.dismiss();
             }
         });
-//设置"不同意"按钮
+        //设置"不同意"按钮
         builder.setNegativeButton("不同意", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
