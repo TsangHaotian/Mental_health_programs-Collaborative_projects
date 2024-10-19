@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,7 @@ public class registerActivity extends AppCompatActivity {
     private static final String SHARED_PREFS = "sharedPrefs";
     private static final String USERNAME = "username";
     private static final String PASSWORD = "password";
+    private ImageView togglePassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,7 @@ public class registerActivity extends AppCompatActivity {
         reg = findViewById(R.id.btn_register);
         musername = findViewById(R.id.uer_name);
         mpassword = findViewById(R.id.uer_password);
+        togglePassword = findViewById(R.id.view_password);
 
 
         reg.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +63,23 @@ public class registerActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // 密码可见性
+        togglePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if ((mpassword.getInputType() & InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
+                    // 前提检测如果密码可见，就强制转化为不可见的密码
+                    mpassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    togglePassword.setImageResource(R.drawable.baseline_key_off_24);
+                } else {
+                    // 如果当前是隐藏状态，切换为可见状态
+                    mpassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    togglePassword.setImageResource(R.drawable.baseline_key_24);
+                }
+            }
+        });
+
     }
 
     private void setFunction() {
