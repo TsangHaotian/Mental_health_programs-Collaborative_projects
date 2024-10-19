@@ -13,16 +13,6 @@
         android:theme="@style/Theme.Mental_health_programsCollaborative_projects"
         tools:targetApi="31">
         <activity
-<<<<<<< Updated upstream
-            android:name=".registerActivity"
-            android:exported="false"
-            android:theme="@style/AppTheme"
-            />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-=======
             android:name=".ShoppingActivity"
             android:exported="false" />
         <activity
@@ -45,7 +35,6 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
->>>>>>> Stashed changes
             android:name=".loginActivity"
             android:exported="true">
             <intent-filter>
