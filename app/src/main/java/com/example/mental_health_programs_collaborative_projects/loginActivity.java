@@ -95,15 +95,22 @@ public class loginActivity extends AppCompatActivity {
         String username = musername.getText().toString().trim();
         String password = mpassword.getText().toString().trim();
 
+        // 先定义一个变量来标记是否有错误
+        boolean hasError = false;
         if (username.isEmpty()) {
             musername.setError("用户名不能为空");
-            return;
+            hasError = true;
         }
 
         if (password.isEmpty()) {
             mpassword.setError("密码不能为空");
+            hasError = true;
+        }
+        if (hasError) {
+            // 如果有错误，就不执行登录操作
             return;
         }
+
 
         submitCredentials(username, password);
         // 如果用户名和密码都不为空，执行提交操作并跳转到主页面
