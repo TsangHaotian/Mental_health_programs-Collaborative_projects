@@ -1,5 +1,7 @@
 package com.example.mental_health_programs_collaborative_projects;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -13,6 +15,7 @@ import com.example.mental_health_programs_collaborative_projects.fragment.health
 import com.example.mental_health_programs_collaborative_projects.fragment.online_consultationFragment;
 import com.example.mental_health_programs_collaborative_projects.fragment.self_assessmentFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private diaryFragment mdiary_fragment;
     private online_consultationFragment monline_consultationFragment;
     private cultivation_systemFragment mclutivation_systemFragment;
+
+    private NavigationView nav_view;
 
     //底部导航栏
     @Override
@@ -31,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
         //初始化控件
         BottomNavigationView mbottomNavigationView = findViewById(R.id.bt_bottomnavigation);
-        //设置点击事件
+        nav_view = findViewById(R.id.nav_view);
+
+        //设置点击事件，点击底部导航栏
         mbottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             //底部导航栏跳转函数
@@ -59,7 +66,36 @@ public class MainActivity extends AppCompatActivity {
         });
         //默认首页选中
         selectedFragment(0);
+
+
+        //点击事件，点击侧边栏
+        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                if (item.getItemId() == R.id.nav_side_one) {
+                    //跳转到个人主页
+                    Intent intent = new Intent(MainActivity.this, Personal_homepageActivity.class);
+                    startActivity(intent);
+                } else if (item.getItemId() == R.id.nav_side_two) {
+                    //跳转到使用帮助
+                    Intent intent = new Intent(MainActivity.this, HelpActivity.class);
+                    startActivity(intent);
+                } else if (item.getItemId() == R.id.nav_side_three) {
+                    //跳转到使用帮助
+                    Intent intent = new Intent(MainActivity.this, Contact_usActivity.class);
+                    startActivity(intent);
+                } else {
+                    //跳转到使用帮助
+                    Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+                    startActivity(intent);
+                }
+                return true;
+            }
+        });
+
     }
+
     //当点击第一个界面，则隐藏其他界面，并且把选择界面添加到content的位置，实现跳转
     private void selectedFragment(int position) {
         androidx.fragment.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -104,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
         //一定要提交
         fragmentTransaction.commit();
     }
+
     //实现当点击当前页面，隐藏其他页面
     private void hideFragment(androidx.fragment.app.FragmentTransaction fragmentTransaction) {
         if (mself_assessmentFragment != null) {
@@ -125,11 +162,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     //********************************************************************************************************//
-
-    //侧边抽屉部分
-
-
-
 
 
 }

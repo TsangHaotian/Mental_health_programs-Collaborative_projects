@@ -12,24 +12,24 @@
         android:id="@+id/bt_bottomnavigation_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#94BB6F"
-        android:paddingTop="45dp"
+        android:background="#e0dbb6"
         android:paddingLeft="18dp"
+        android:paddingTop="45dp"
         android:paddingRight="18dp"
         android:paddingBottom="10dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <!-- 用户头像 -->
-        <ImageView
+        <ImageButton
             android:id="@+id/profile_icon"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/desktop_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_launcher_foreground"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:ignore="ContentDescription" />
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <!-- 用户名 -->
         <TextView
             android:id="@+id/profile_name"
@@ -48,11 +48,11 @@
 
         <!-- 更多功能小图标 -->
         <ImageButton
-            android:id="@+id/profile_more_icon"
+            android:id="@+id/shopping_icon"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="#00FFFFFF"
-            android:src="@drawable/more_icon"
+            android:src="@drawable/shopping_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -65,18 +65,17 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/bt_bottomnavigation_top"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
-
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_bottomnavigation_top">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="60dp"
-            android:text="自我评估" />
+            android:text="自我评估"
+            android:textSize="60dp" />
 
     </FrameLayout>
 

@@ -2,4 +2,17 @@
     <string name="app_name">共享项目</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">啊对对队</string>
+    <string name="nav_header_subtitle">Github.ADDD.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="side_menu_one">个人主页</string>
+    <string name="side_menu_two">使用帮助</string>
+    <string name="side_menu_three">联系我们</string>
+    <string name="side_menu_four">设置</string>
 </resources>
