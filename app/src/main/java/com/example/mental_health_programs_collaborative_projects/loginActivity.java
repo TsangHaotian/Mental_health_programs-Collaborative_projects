@@ -106,12 +106,17 @@ public class loginActivity extends AppCompatActivity {
         }
 
         submitCredentials(username, password);
+        // 如果用户名和密码都不为空，执行提交操作并跳转到主页面
+        submitCredentials(username, password);
+        Intent intent = new Intent(loginActivity.this, MainActivity.class); // 假设你要跳转到的页面是MainActivity
+        startActivity(intent);
+        /*overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left); // 添加过渡动画，如果有需要*/
     }
 
     private void submitCredentials(String username, String password) {
-        // 这里添加提交用户名和密码的代码
-        // 例如：使用HTTP请求发送到服务器
-    }
+    // 这里添加提交用户名和密码的代码
+    // 例如：使用HTTP请求发送到服务器
+}
 
     private void showAgreementDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
