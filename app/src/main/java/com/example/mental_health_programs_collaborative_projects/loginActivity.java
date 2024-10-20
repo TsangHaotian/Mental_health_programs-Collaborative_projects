@@ -31,6 +31,7 @@ public class loginActivity extends AppCompatActivity {
     private static final String SHARED_PREFS = "sharedPrefs";
     private static final String USERNAME = "username";
     private static final String PASSWORD = "password";
+    private CheckBox rememberPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +46,19 @@ public class loginActivity extends AppCompatActivity {
         mpassword = findViewById(R.id.uer_password);
         togglePassword = findViewById(R.id.view_password);
         agreement = findViewById(R.id.btnagree);
-        CheckBox rememberMe = findViewById(R.id.remember_password);
+        rememberPassword = findViewById(R.id.remember_password);
 
-        // 读取SharedPreferences中的用户名和密码
+        // 从SharedPreferences读取记住密码的状态，并自动填充用户名和密码
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        String savedUsername = sharedPreferences.getString(USERNAME, "");
-        String savedPassword = sharedPreferences.getString(PASSWORD, "");
-
-        if (!savedUsername.isEmpty() && !savedPassword.isEmpty()) {
-            musername.setText(savedUsername);
-            mpassword.setText(savedPassword);
-            rememberMe.setChecked(true);
+        boolean isRemember = sharedPreferences.getBoolean("remember_password", false);
+        if (isRemember) {
+            String savedUsername = sharedPreferences.getString(USERNAME, null);
+            String savedPassword = sharedPreferences.getString(PASSWORD, null);
+            if (savedUsername != null && savedPassword != null) {
+                musername.setText(savedUsername);
+                mpassword.setText(savedPassword);
+                rememberPassword.setChecked(true);
+            }
         }
 
         // 注册按钮跳转
@@ -107,6 +110,7 @@ public class loginActivity extends AppCompatActivity {
         });
     }
 
+
     private void checkFieldsAndSubmit() {
         String username = musername.getText().toString().trim();
         String password = mpassword.getText().toString().trim();
@@ -136,27 +140,39 @@ public class loginActivity extends AppCompatActivity {
 
         // 从SharedPreferences读取保存的用户名和密码
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
         String savedUsername = sharedPreferences.getString(USERNAME, "");
         String savedPassword = sharedPreferences.getString(PASSWORD, "");
 
-        CheckBox rememberMe = findViewById(R.id.remember_password);
-        if (rememberMe.isChecked()) {
-            editor.putString(USERNAME, username);
-            editor.putString(PASSWORD, password);
-        } else {
-            editor.remove(USERNAME);
-            editor.remove(PASSWORD);
-        }
-        editor.apply();
 
         if (username.equals(savedUsername) && password.equals(savedPassword)) {
             // 登录成功，跳转到主页面
             Intent intent = new Intent(loginActivity.this, MainActivity.class);
             startActivity(intent);
+            // 根据记住密码复选框的状态保存或清除用户名和密码
+            if (rememberPassword.isChecked()) {
+                saveCredentials(username, password);
+            } else {
+                clearCredentials();
+            }
         } else {
             Toast.makeText(this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void saveCredentials(String username, String password) {
+        SharedPreferences.Editor editor = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE).edit();
+        editor.putString(USERNAME, username);
+        editor.putString(PASSWORD, password);
+        editor.putBoolean("remember_password", true);
+        editor.apply();
+    }
+
+    private void clearCredentials() {
+        SharedPreferences.Editor editor = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE).edit();
+        editor.remove(USERNAME);
+        editor.remove(PASSWORD);
+        editor.remove("remember_password");
+        editor.apply();
     }
 
     private void showAgreementDialog() {
