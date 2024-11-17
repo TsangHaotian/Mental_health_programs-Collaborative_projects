@@ -57,4 +57,15 @@ public class self_assessmentFragment extends Fragment {
 
         return view;
     }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getContext(R.layout.fragment_self_assessment);
+    }
+
+    private void getContext(int fragmentSelfAssessment) {
+
+    }
+
 }
