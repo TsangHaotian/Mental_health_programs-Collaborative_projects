@@ -3,18 +3,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".fragment.cultivation_systemFragment">
+    tools:context=".fragment.self_assessmentFragment"
+    android:background="#12000000"
+    >
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="60dp"
-        android:text="健康资源" />
 
+    <!--搜索框-->
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:paddingTop="35dp"
+        android:background="@color/yellow"
+        >
+
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            >
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_corners"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:hint="搜索"
+                >
+            </EditText>
+
+            <ImageView
+                android:id="@+id/btn_search"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="7dp"
+                android:paddingRight="10dp"
+                android:src="@drawable/search_icon">
+
+            </ImageView>
+
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--板块分类框-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/grey"
+            app:tabGravity="fill"
+            app:tabTextColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorColor="@color/grey"
+            />
+
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        </androidx.viewpager2.widget.ViewPager2>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
