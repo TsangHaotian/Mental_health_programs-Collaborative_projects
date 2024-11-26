@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.mental_health_programs_collaborative_projects.R;
 import com.example.mental_health_programs_collaborative_projects.ShoppingActivity;
+import com.example.mental_health_programs_collaborative_projects.emotion;
 
 public class self_assessmentFragment extends Fragment {
 
@@ -55,17 +56,22 @@ public class self_assessmentFragment extends Fragment {
             }
         });
 
+        // 获取情绪测评的ImageButton
+        ImageButton imageButton2 = view.findViewById(R.id.imageButton2);
+
+        // 设置点击事件监听器
+        imageButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("TAG", "heart double clicked");
+                Intent A = new Intent(requireActivity(), emotion.class);
+                startActivity(A);
+            }
+        });
+
         return view;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getContext(R.layout.fragment_self_assessment);
-    }
 
-    private void getContext(int fragmentSelfAssessment) {
-
-    }
 
 }
