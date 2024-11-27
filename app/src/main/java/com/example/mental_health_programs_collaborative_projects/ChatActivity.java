@@ -1,8 +1,11 @@
 package com.example.mental_health_programs_collaborative_projects;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +18,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -74,37 +78,41 @@ public class ChatActivity extends AppCompatActivity {
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btn_send.setVisibility(View.GONE); // 点击发送后，隐藏发送按钮（防止用户重复点点点）
-                lo_msgloading.setVisibility(View.VISIBLE);
-                // 用户的提问
+                btn_send.setVisibility(View.GONE); // 点击发送后，隐藏发送按钮
+                lo_msgloading.setVisibility(View.VISIBLE); // 显示加载动画
+
                 String user_ask = et_chat.getText().toString(); // 获取输入框里的信息
-                Chatlist C3;
-                C3 = new Chatlist("你", user_ask);
+                Chatlist C3 = new Chatlist("你", user_ask);
                 mDatas.add(C3);
 
                 chatAdapter.ResetChatlistAdapter(mDatas);
                 rc_chatlist.setAdapter(chatAdapter);
 
                 et_chat.setText("");
-                // Wenxin wx=new WenXin(apikey,secretkey,airole);
+
+                // 检查网络连接
+                ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                if (connectivityManager != null) {
+                    NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+                    if (activeNetwork != null && !activeNetwork.isConnected()) {
+                        // 没有网络连接，显示 Toast 提示
+                        Toast.makeText(ChatActivity.this, "没有网络连接，请检查您的网络设置。", Toast.LENGTH_LONG).show();
+                        btn_send.setVisibility(View.VISIBLE); // 恢复发送按钮
+                        lo_msgloading.setVisibility(View.INVISIBLE); // 隐藏加载动画
+                        return;
+                    }
+                }
+
                 WenXin wx = new WenXin(apikey, secretkey, airole);
 
-                // 文心一言的回答
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        // 请求详情
-
-                        // 调用 GetAnswer 方法
                         try {
                             wx.GetAnswer(user_ask, new WenXin.ResponseCallback() {
                                 @Override
                                 public void onSuccess(String response) {
-                                    // 在这里处理获取到的结果
-                                    Chatlist C4;
-                                    String wxresult = response.toString();
-                                    C4 = new Chatlist("AI", wxresult);
-
+                                    Chatlist C4 = new Chatlist("AI", response);
                                     mDatas.add(C4);
                                     chatAdapter.ResetChatlistAdapter(mDatas);
 
@@ -115,11 +123,7 @@ public class ChatActivity extends AppCompatActivity {
 
                                 @Override
                                 public void onError(String error) {
-                                    // 在这里处理错误情况
-                                    Chatlist C4;
-                                    String wxresult = "获取信息失败";
-                                    C4 = new Chatlist("AI", wxresult);
-
+                                    Chatlist C4 = new Chatlist("AI", "获取信息失败");
                                     mDatas.add(C4);
                                     chatAdapter.ResetChatlistAdapter(mDatas);
 
@@ -129,16 +133,13 @@ public class ChatActivity extends AppCompatActivity {
                                 }
                             });
                         } catch (IOException e) {
-                            throw new RuntimeException(e);
+                            e.printStackTrace();
                         } catch (JSONException e) {
-                            throw new RuntimeException(e);
+                            e.printStackTrace();
                         }
-
                     }
                 }).start();
-
             }
-
         });
 
         // 点击返回，返回mainActivity
