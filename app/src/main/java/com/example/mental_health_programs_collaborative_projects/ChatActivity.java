@@ -24,9 +24,12 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.mental_health_programs_collaborative_projects.fragment.online_consultationFragment;
+
 import org.json.JSONException;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

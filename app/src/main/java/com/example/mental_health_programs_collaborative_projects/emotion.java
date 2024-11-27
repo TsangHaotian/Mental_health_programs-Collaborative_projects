@@ -50,6 +50,13 @@ public class emotion extends AppCompatActivity {
                 displayScore(); // 显示分数
             }
         });
+        Button backButton = findViewById(R.id.back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // 结束当前 Activity，实现返回操作
+            }
+        });
     }
 
     // 获取选中的值
