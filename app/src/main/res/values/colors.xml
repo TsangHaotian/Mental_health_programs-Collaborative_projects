@@ -6,4 +6,9 @@
     <color name="colorPrimaryDark">#E0DBB6</color>
     <color name="green">#538A8B</color>
     <color name="yellow">#E0DBB6</color>
+    <color name="blue">#87CEEB</color>
+    <color name="beige">#FFF8DC</color>
+    <color name="pink1">#FFC0CB</color>
+    <color name="purple">#D8BFD8</color>
+    <color name="pink2">#FF1493</color>
 </resources>

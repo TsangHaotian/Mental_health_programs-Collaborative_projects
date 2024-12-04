@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="95dp"
         android:paddingTop="35dp"
-        android:background="@color/yellow"
+        android:background="#FFC0CB"
         >
 
         <RelativeLayout

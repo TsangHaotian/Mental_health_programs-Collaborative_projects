@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0DBB6"
+    android:background="#FFC0CB"
     android:orientation="vertical"
     tools:context=".loginActivity">
 
@@ -48,7 +48,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:textColorHint="#3B644D"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
@@ -76,7 +76,7 @@
                     android:inputType="textPassword"
                     android:paddingLeft="10dp"
                     android:textColorHint="#3B644D"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
                 <!--密码不可见or可见-->
                 <ImageView
@@ -99,9 +99,10 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:backgroundTint="#538A8B"
+            android:layout_gravity="center"
+            android:backgroundTint="#FFF8DC"
             android:text="登录"
-            android:textColor="#F3E9E89B"
+            android:textColor="#6F000000"
             android:textSize="20sp"
             android:textStyle="bold" />
         <!--记住密码-->
