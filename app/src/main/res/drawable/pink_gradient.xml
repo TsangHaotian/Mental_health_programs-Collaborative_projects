@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<gradient xmlns:android="http://schemas.android.com/apk/res/android">
-    android:startColor="#FFC0CB" <!-- 浅粉色 -->
-    android:endColor="#FF1493"   <!-- 深粉色 -->
-    android:type="linear"
-    android:angle="270" />     <!-- 从上到下 -->
-</gradient>

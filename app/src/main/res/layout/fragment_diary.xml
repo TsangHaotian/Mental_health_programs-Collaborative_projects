@@ -23,9 +23,9 @@
                 android:paddingTop="20dp"
                 android:paddingEnd="30dp"
                 android:paddingBottom="20dp"
-                android:backgroundTint="@color/green"
+                android:backgroundTint="@color/purple"
                 android:text="查看日记"
-                android:textColor="@color/yellow"
+                android:textColor="@color/white"
                 android:textSize="26sp" />
 <!--创建日记按钮-->
             <Button
@@ -37,9 +37,9 @@
                 android:paddingTop="20dp"
                 android:paddingEnd="30dp"
                 android:paddingBottom="20dp"
-                android:backgroundTint="@color/green"
+                android:backgroundTint="@color/purple"
                 android:text="创建日记"
-                android:textColor="@color/yellow"
+                android:textColor="@color/white"
                 android:textSize="26sp" />
 
         </LinearLayout>
