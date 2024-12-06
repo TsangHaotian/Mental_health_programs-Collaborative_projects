@@ -38,7 +38,7 @@
                 android:layout_gravity="end|center_vertical"
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="20dp"
-                android:background="@color/yellow"
+                android:background="#FFC0CB"
                 android:src="@drawable/save"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
