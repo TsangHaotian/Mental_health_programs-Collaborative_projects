@@ -62,11 +62,11 @@ public class ChatActivity extends AppCompatActivity {
         // 聊天信息
         mDatas = new ArrayList<Chatlist>();
 
-        // 读取用户设置里的文心一言的API_Key等信息
+        // 读取用户设置里的文心一言的API_Key等信息111
         preferences = this.getSharedPreferences("usersetting", MODE_PRIVATE);
-        String apikey = preferences.getString("API_Key", "bGegXiN3FV4ffTvgURYYxNcu");
-        String secretkey = preferences.getString("Secret_Key", "ZT2U7idJX2s02LHlWMX4hXhv9vpEb0AW");
-        String airole = preferences.getString("Role", "你是一个心理医生，你的病人或许是有抑郁症人群或者没有疾病，你对用户的语言也不要太啰嗦，尽可能给出一些实质性的回答");
+        String apikey = preferences.getString("API_Key", "oQtUEMpGo1M9vsMfxmrwePzF");
+        String secretkey = preferences.getString("Secret_Key", "LxfNECAa2nNu5fLQERgNlUyL4W2UW0eX");
+        String airole = preferences.getString("Role", "你是一个心理医生，你对用户的语言也不要太啰嗦，对于用户的问题你要给出一些实质性的解决办法和回答，并且安慰用户，");
 
         chatAdapter = new ChatlistAdapter(this, mDatas);
 
