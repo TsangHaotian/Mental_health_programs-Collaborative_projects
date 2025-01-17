@@ -8,8 +8,6 @@
     tools:context=".fragment.self_assessmentFragment">
 
     <!-- 顶部布局 -->
-
-    <!-- 底部布局 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bt_bottomnavigation_top"
         android:layout_width="match_parent"
@@ -34,8 +32,6 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- 用户名 -->
-
-        <!-- 更多功能小图标 -->
         <TextView
             android:id="@+id/profile_name"
             android:layout_width="wrap_content"
@@ -51,6 +47,7 @@
             app:layout_constraintVertical_bias="0.156"
             tools:ignore="HardcodedText" />
 
+        <!-- 更多功能小图标 -->
         <ImageButton
             android:id="@+id/shopping_icon"
             android:layout_width="40dp"
@@ -61,95 +58,210 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <FrameLayout
-        android:id="@+id/content"
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollable_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bt_bottomnavigation_top">
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="136dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="wrap_content"
+            <!-- 中间内容 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- 第一排圆形按钮 -->
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:columnCount="4"
+                    android:rowCount="3"
+                    tools:ignore="MissingConstraints">
+
+                    <!-- 每个按钮 -->
+                    <ImageButton
+                        android:id="@+id/button1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="8dp"
+                        android:background="#FFFFFF"
+                        android:src="@drawable/heart_double"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <ImageButton
+                        android:id="@+id/button2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="8dp"
+                        android:background="#FFFFFF"
+                        android:src="@drawable/heart_double"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <ImageButton
+                        android:id="@+id/button3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="8dp"
+                        android:background="#FFFFFF"
+                        android:src="@drawable/heart_double"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <ImageButton
+                        android:id="@+id/button4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="8dp"
+                        android:background="#FFFFFF"
+                        android:src="@drawable/heart_double"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <ImageButton
+                        android:id="@+id/button5"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="8dp"
+                        android:background="#FFFFFF"
+                        android:src="@drawable/heart_double"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <ImageButton
+                        android:id="@+id/button6"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="8dp"
+                        android:background="#FFFFFF"
+                        android:src="@drawable/heart_double"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <ImageButton
+                        android:id="@+id/button7"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="8dp"
+                        android:background="#FFFFFF"
+                        android:src="@drawable/heart_double"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <ImageButton
+                        android:id="@+id/button8"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="8dp"
+                        android:background="#FFFFFF"
+                        android:src="@drawable/heart_double"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+
+                    <!-- 按钮继续... -->
+                </GridLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 底部卡片布局 -->
+            <LinearLayout
+                android:id="@+id/card_section"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFFDFD"
-                android:src="@drawable/heart_double"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.092"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.376"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:orientation="vertical"
+                android:padding="16dp">
 
-            <ImageButton
-                android:id="@+id/imageButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#FBFBFB"
-                android:src="@drawable/heart_double"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.636"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.376"
-                tools:ignore="SpeakableTextPresentCheck" />
+                <!-- 卡片 -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card1"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#87CEEB"
+                    app:cardCornerRadius="8dp">
 
-            <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#FBF9F9"
-                android:src="@drawable/heart_double"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.881"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.376"
-                tools:ignore="SpeakableTextPresentCheck" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="蓝色卡片内容 1"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </androidx.cardview.widget.CardView>
 
-            <ImageButton
-                android:id="@+id/imageButton5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:backgroundTint="#FBFBFB"
-                android:src="@drawable/heart_double"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton3"
-                app:layout_constraintHorizontal_bias="0.57"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="SpeakableTextPresentCheck" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card2"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#87CEEB"
+                    app:cardCornerRadius="8dp">
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="情绪评测"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.076"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.854" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="蓝色卡片内容 2"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </androidx.cardview.widget.CardView>
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card3"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#87CEEB"
+                    app:cardCornerRadius="8dp">
 
-    </FrameLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="蓝色卡片内容 3"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </androidx.cardview.widget.CardView>
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card4"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#87CEEB"
+                    app:cardCornerRadius="8dp">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="蓝色卡片内容 4"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </androidx.cardview.widget.CardView>
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card5"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#87CEEB"
+                    app:cardCornerRadius="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="蓝色卡片内容 5"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp" />
+                </androidx.cardview.widget.CardView>
+
+                <!-- 其他卡片继续... -->
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

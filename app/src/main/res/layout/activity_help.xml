@@ -7,11 +7,111 @@
     android:layout_height="match_parent"
     tools:context=".HelpActivity">
 
+    <!-- 标题 -->
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="使用帮助"
-        android:textSize="66dp"
-        tools:ignore="MissingConstraints" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 滚动视图 -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 智能问答AI帮助 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. 智能问答AI"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="智能问答AI可以帮助您解答心理相关的问题，您只需输入您的困扰或问题，系统会根据您的描述提供建议和安慰。"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:textColor="#757575" />
+
+            <!-- 日记本帮助 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. 日记本"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="在日记本功能中，您可以记录每天的心情和事件。通过写下您的想法和感受，您可以更好地理解自己，并且随着时间的推移，您将能够看到情感的变化和成长。"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:textColor="#757575" />
+
+            <!-- 每日评测帮助 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. 每日评测"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="每日评测功能可以帮助您评估每天的心理状态。系统会根据您的反馈提供个性化的分析报告，帮助您更好地了解自己的情绪波动。"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:textColor="#757575" />
+
+            <!-- 联系客服 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4. 联系客服"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="如果您在使用过程中遇到问题，可以随时联系客服，我们将为您提供帮助。"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:textColor="#757575" />
+
+            <!-- 底部联系方式 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="版权所有 © 2025"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:layout_marginTop="30dp"
+                android:gravity="center" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

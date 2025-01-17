@@ -57,10 +57,11 @@ public class self_assessmentFragment extends Fragment {
         });
 
         // 获取情绪测评的ImageButton
-        ImageButton imageButton2 = view.findViewById(R.id.imageButton2);
+        // 绑定按钮
+        ImageButton button1 = view.findViewById(R.id.button1);
 
         // 设置点击事件监听器
-        imageButton2.setOnClickListener(new View.OnClickListener() {
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("TAG", "heart double clicked");

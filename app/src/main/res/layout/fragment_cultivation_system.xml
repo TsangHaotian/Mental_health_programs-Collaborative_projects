@@ -5,16 +5,41 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".fragment.cultivation_systemFragment">
+    tools:context=".fragment.CultivationSystemFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
+    <!-- 标题 -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="60dp"
-        android:text="养成系统" />
+        android:textSize="24sp"
+        android:text="养花系统" />
 
+    <!-- 显示花的状态 -->
+    <TextView
+        android:id="@+id/flowerStatusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="花需要浇水..."
+        android:textSize="20sp" />
+
+    <!-- 显示花的生长情况 -->
+    <TextView
+        android:id="@+id/flowerGrowthText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="花的生长：0%"
+        android:textSize="20sp" />
+
+    <!-- 浇水按钮 -->
+    <Button
+        android:id="@+id/waterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="浇水"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>
