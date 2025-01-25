@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HappinessActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="24dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="在过去的一个月里："
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.你的总体感觉怎样？"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/q1_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="好极了(1)" />
+
+                <RadioButton
+                    android:id="@+id/q1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="精神很好(2)" />
+
+                <RadioButton
+                    android:id="@+id/q1_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="精神不错(3)" />
+
+                <RadioButton
+                    android:id="@+id/q1_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="精神时好时坏(4)" />
+
+                <RadioButton
+                    android:id="@+id/q1_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="精神不好(5)" />
+
+                <RadioButton
+                    android:id="@+id/q1_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="精神很不好(6)" />
+            </RadioGroup>
+
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2.你是否为自己的神经质或“神经病”感到烦恼？"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/q2_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="极端烦恼(1)" />
+
+                <RadioButton
+                    android:id="@+id/q2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="相当烦恼(2)" />
+
+                <RadioButton
+                    android:id="@+id/q2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="有些烦恼(3)" />
+
+                <RadioButton
+                    android:id="@+id/q2_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="很少烦恼(4)" />
+
+                <RadioButton
+                    android:id="@+id/q2_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="一点也不烦恼(5)" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3.你是否一直牢牢地控制着自己的行为，思维，情感或感觉？"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/q3_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="绝对的大部分是的(1)" />
+
+                <RadioButton
+                    android:id="@+id/q3_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="一般来说是的(2)" />
+
+                <RadioButton
+                    android:id="@+id/q3_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="控制得不太好(3)" />
+
+                <RadioButton
+                    android:id="@+id/q3_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="有些混乱(4)" />
+
+                <RadioButton
+                    android:id="@+id/q3_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="非常混乱(5)" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioGroup3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.你是否由于悲哀，失去信心，失望或有许多麻烦而怀疑还有任何事情值得去做？"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/q4_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="极度怀疑(1)" />
+
+                <RadioButton
+                    android:id="@+id/q4_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="非常怀疑(2)" />
+
+                <RadioButton
+                    android:id="@+id/q4_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="相当怀疑(3)" />
+
+                <RadioButton
+                    android:id="@+id/q4_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="有些怀疑(4)" />
+
+                <RadioButton
+                    android:id="@+id/q4_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="略微怀疑(5)" />
+
+                <RadioButton
+                    android:id="@+id/q4_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="一点也不怀疑(6)" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioGroup4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5.你是否正在受到或曾经受到任何约束，刺激或压力？"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/q5_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="相当多(1)" />
+
+                <RadioButton
+                    android:id="@+id/q5_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="不少(2)" />
+
+                <RadioButton
+                    android:id="@+id/q5_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="有些(3)" />
+
+                <RadioButton
+                    android:id="@+id/q5_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="不多(4)" />
+
+                <RadioButton
+                    android:id="@+id/q5_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="没有(5)" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioGroup5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6.你的生活是否幸福，满足或愉快？"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/q6_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="非常幸福(1)" />
+
+                <RadioButton
+                    android:id="@+id/q6_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="相当幸福(2)" />
+
+                <RadioButton
+                    android:id="@+id/q6_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="满足(3)" />
+
+                <RadioButton
+                    android:id="@+id/q6_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="略有些不满足(4)" />
+
+                <RadioButton
+                    android:id="@+id/q6_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="非常不满足(5)" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioGroup6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7.你是否有理由怀疑自己曾经失去理智，或对行为，谈话，思维或记忆失去控制？"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/q7_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="一点也没有(1)" />
+
+                <RadioButton
+                    android:id="@+id/q7_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="只有一点点(2)" />
+
+                <RadioButton
+                    android:id="@+id/q7_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="有些(3)" />
+
+                <RadioButton
+                    android:id="@+id/q7_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="不严重有些(4)" />
+
+                <RadioButton
+                    android:id="@+id/q7_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="相当严重是的(5)" />
+
+                <RadioButton
+                    android:id="@+id/q7_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="非常严重(6)" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioGroup7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8.你是否感到焦虑，担心或不安？"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/q8_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="极端严重(1)" />
+
+                <RadioButton
+                    android:id="@+id/q8_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="非常严重(2)" />
+
+                <RadioButton
+                    android:id="@+id/q8_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="相当严重(3)" />
+
+                <RadioButton
+                    android:id="@+id/q8_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="有些(4)" />
+
+                <RadioButton
+                    android:id="@+id/q8_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="很少(5)" />
+
+                <RadioButton
+                    android:id="@+id/q8_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="无(6)" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioGroup8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9.你睡醒之后是否感到头脑清醒和精力充沛？"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/q9_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="天天如此(1)" />
+
+                <RadioButton
+                    android:id="@+id/q9_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="几乎天天(2)" />
+
+                <RadioButton
+                    android:id="@+id/q9_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="相当频繁(3)" />
+
+                <RadioButton
+                    android:id="@+id/q9_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="不多(4)" />
+
+                <RadioButton
+                    android:id="@+id/q9_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="很少(5)" />
+
+                <RadioButton
+                    android:id="@+id/q9_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="无(6)" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="500dp"
+                android:orientation="vertical"
+                android:padding="16dp"
+                tools:ignore="DuplicateIds">
+
+                <Button
+                    android:id="@+id/submit_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="提交" />
+
+                <Button
+                    android:id="@+id/back_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="返回" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="更多内容有待开发">
+                </TextView>
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</ScrollView>
