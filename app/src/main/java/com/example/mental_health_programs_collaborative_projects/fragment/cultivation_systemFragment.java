@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -13,54 +14,57 @@ import com.example.mental_health_programs_collaborative_projects.R;
 
 public class cultivation_systemFragment extends Fragment {
 
-    private int flowerWaterLevel = 0; // 水分等级 0-100
-    private int flowerGrowth = 0; // 花的生长情况，百分比
-    private TextView flowerStatusText;
-    private TextView flowerGrowthText;
+    private int growthPercentage = 0;  // 初始成长为0%
+    private ImageView flowerImage;
+    private TextView growthStatus;
+    private Button waterButton;
+    private Button fertilizeButton;
 
     public cultivation_systemFragment() {
-        // 设置布局
-        super(R.layout.fragment_cultivation_system);
+        // 默认构造函数
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // 使用 Fragment 的视图来加载布局文件
         View view = inflater.inflate(R.layout.fragment_cultivation_system, container, false);
 
-        // 获取UI控件
-        flowerStatusText = view.findViewById(R.id.flowerStatusText);
-        flowerGrowthText = view.findViewById(R.id.flowerGrowthText);
-        Button waterButton = view.findViewById(R.id.waterButton);
+        // 初始化视图控件
+        flowerImage = view.findViewById(R.id.flowerImage);
+        growthStatus = view.findViewById(R.id.growthStatus);
+        waterButton = view.findViewById(R.id.waterButton);
+        fertilizeButton = view.findViewById(R.id.fertilizeButton);
 
-        // 设置浇水按钮的点击事件
-        waterButton.setOnClickListener(v -> waterFlower());
+        // 设置浇水按钮点击事件
+        waterButton.setOnClickListener(v -> increaseGrowth());
+
+        // 设置施肥按钮点击事件
+        fertilizeButton.setOnClickListener(v -> increaseGrowth());
+
+        // 初始化显示花的成长状态
+        updateFlowerImage();
 
         return view;
     }
 
-    // 浇水方法，增加水分，更新生长情况
-    private void waterFlower() {
-        if (flowerWaterLevel < 100) {
-            flowerWaterLevel += 10; // 每次浇水增加10%的水分
-            flowerGrowth += 5; // 每次浇水，生长5%
+    private void increaseGrowth() {
+        if (growthPercentage + 5 <= 100) {
+            growthPercentage += 5; // 每次增加5%
+        } else {
+            growthPercentage = 100; // 达到最大100%
         }
+        updateFlowerImage(); // 更新花的图片和成长状态
+    }
 
-        // 限制最大生长百分比和水分
-        if (flowerGrowth > 100) {
-            flowerGrowth = 100;
-        }
-        if (flowerWaterLevel > 100) {
-            flowerWaterLevel = 100;
-        }
+    private void updateFlowerImage() {
+        growthStatus.setText("成长状态: " + growthPercentage + "%");
 
-        // 更新UI
-        flowerStatusText.setText("水分：" + flowerWaterLevel + "%");
-        flowerGrowthText.setText("花的生长：" + flowerGrowth + "%");
+        int imageResource = R.drawable.flower_img1; // 初始图片
+        if (growthPercentage >= 20) imageResource = R.drawable.flower_img2;
+        if (growthPercentage >= 40) imageResource = R.drawable.flower_img3;
+        if (growthPercentage >= 60) imageResource = R.drawable.flower_img4;
+        if (growthPercentage >= 80) imageResource = R.drawable.flower_img5;
 
-        // 判断是否完成生长
-        if (flowerGrowth == 100) {
-            flowerStatusText.setText("花已完全生长！");
-        }
+        flowerImage.setImageResource(imageResource); // 更新图片
     }
 }

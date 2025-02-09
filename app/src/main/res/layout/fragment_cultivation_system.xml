@@ -1,45 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".fragment.CultivationSystemFragment">
+    android:orientation="horizontal"
+    android:padding="16dp">
 
-    <!-- 标题 -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <!-- 左侧花的成长区域 -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 包裹花的图片的ScrollView，居中显示花 -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            tools:ignore="SpeakableTextPresentCheck">
+
+            <!-- 用LinearLayout包裹花的图片并居中 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <!-- 花的图片 -->
+                <ImageView
+                    android:id="@+id/flowerImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/flower_img1" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- 成长状态文本 -->
+        <TextView
+            android:id="@+id/growthStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="成长状态: 0%"
+            android:textSize="18sp" />
+
+        <!-- 按钮的线性布局 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- 浇水按钮 -->
+            <Button
+                android:id="@+id/waterButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="浇水" />
+
+            <!-- 施肥按钮 -->
+            <Button
+                android:id="@+id/fertilizeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="施肥" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 右侧任务导航栏 -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#F5F5F5"
         android:gravity="center"
-        android:textSize="24sp"
-        android:text="养花系统" />
+        android:orientation="vertical"
+        android:paddingEnd="16dp">
 
-    <!-- 显示花的状态 -->
-    <TextView
-        android:id="@+id/flowerStatusText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="花需要浇水..."
-        android:textSize="20sp" />
+        <!-- 任务导航项 -->
+        <Button
+            android:id="@+id/taskButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="任务 1" />
 
-    <!-- 显示花的生长情况 -->
-    <TextView
-        android:id="@+id/flowerGrowthText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="花的生长：0%"
-        android:textSize="20sp" />
+        <Button
+            android:id="@+id/taskButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="任务 2" />
 
-    <!-- 浇水按钮 -->
-    <Button
-        android:id="@+id/waterButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="浇水"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp" />
+        <Button
+            android:id="@+id/taskButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="任务 3" />
+    </LinearLayout>
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+</LinearLayout>
