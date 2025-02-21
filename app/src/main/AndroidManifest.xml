@@ -26,6 +26,9 @@
         android:theme="@style/Theme.Mental_health_programsCollaborative_projects"
         tools:targetApi="31">
         <activity
+            android:name=".anxiety"
+            android:exported="false" />
+        <activity
             android:name=".HappinessActivity"
             android:exported="false" />
         <activity
